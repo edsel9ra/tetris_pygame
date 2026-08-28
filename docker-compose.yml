@@ -1,0 +1,11 @@
+services:
+  tetris:
+    build:
+      context: .
+    environment:
+      DISPLAY: "${DISPLAY:-:0}"
+      SDL_VIDEODRIVER: x11
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    stdin_open: true
+    tty: true
